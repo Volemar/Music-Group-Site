@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/group.css" />
+    <title>Group</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+      $(window).scroll(function() {
+      if($(this).scrollTop() != 0) {
+      $('#topNubex').fadeIn();
+      } else {
+      $('#topNubex').fadeOut();
+      }
+      });
+      $('#topNubex').click(function() {
+      $('body,html').animate({scrollTop:0},700);
+      });
+      });
+    </script>
+  </head>
+  <header>
+      <ul id="menuList">
+                    <li>
+                      <a href="../index.html"
+                        ><img src="../img/interact/menuBtns/HomeBtn.png" alt="Home" class="menuPic"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="./group.html"
+                        ><img src="../img/interact/menuBtns/GroupBtn.png" alt="Group" class="menuPic"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="./members.html"
+                        ><img src="../img/interact/menuBtns/MembersBtn.png" alt="Members" class="menuPic"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="./albums.php"
+                        ><img src="../img/interact/menuBtns/AlbumsBtn.png" alt="Albums" class="menuPic"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="./mv.html"
+                        ><img src="../img/interact/menuBtns/MVBtn.png" alt="Music Videos" class="menuPic"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="./labelCompany.html"
+                        ><img src="../img/interact/menuBtns/DCCompanyBtn.png" alt="DC Company" class="menuPic"
+                      /></a>
+                    </li>
+      </ul>
+  </header>
+  <body>
+      <div id="topNubex"><img src="../img/interact/pointerUpclean.png" 
+      style="width: 20%;"/></div>
+      <div id="middle">
+        <h1>DREAMCATCHER</h1>
+        <p>
+          Dreamcatcher (드림캐쳐) - женская группа компании Dreamcatcher
+          Company. Они дебютировали 13 января 2017 года с синглом "Nightmare".
+        </p>
+        <img
+          src="../img/DC_Group_photo.jpg"
+          alt="Dreamcatcher photo"
+          id="dcPhoto"
+        />
+        <p>
+          Изначально группа была известна как MINX. Их дебют состоялся в 2014
+          году, но позднее они дебютировали заново с двумя новыми участницами:
+          Ханьдун и Гахён.
+        </p>
+        <p>
+          В ноябре 2016 компания Happy Face Entertainment объявила, что Minx
+          заново дебютируют под названием «Dreamcatcher» в 2017 году. В состав
+          группы вошли все участницы Minx: Джию, Суа, Шиён, Юхён и Дами; а также
+          две новые участницы - Ханьдун и Гахён. 13 января 2017 года группа
+          выпустила свой дебютный сингл альбом «Nightmare» и клип на заглавный
+          трек «Chase Me». Группа официально дебютировала на музыкальном шоу M!
+          Countdown канала Mnet. 19 февраля был выпущен клип на песню «Emotion».
+        </p>
+        <p>
+          5 апреля 2017 года Dreamcatcher выпустили свой второй сингл-альбом
+          «Fall Asleep In The Mirror» и клип на заглавную песню «Good Night». 3
+          июля был выпущен клип на песню «Lullaby».
+        </p>
+        <p>
+          27 июля 2017 года Dreamcatcher выпустили первый мини-альбом «Prequel»
+          и клип на заглавную песню «Fly High».
+        </p>
+        <p>Участницы:</p>
+        <ul>
+          <li>JiU</li>
+          <li>Sua</li>
+          <li>Siyeon</li>
+          <li>Handong</li>
+          <li>Yoohyeon</li>
+          <li>Dami</li>
+          <li>Gahyeon</li>
+        </ul>
+        <p>Каждая участница представляет особый страх или кошмар.</p>
+        <table id="membersTable">
+          <tr>
+            <th>Имя</th>
+            <th>Позиция</th>
+            <th>Страх</th>
+          </tr>
+          <tr>
+            <td>JiU</td>
+            <td>Лидер, ведущая вокалистка, ведущий танцор, вижуал</td>
+            <td>Погоня</td>
+          </tr>
+          <tr>
+            <td>Sua</td>
+            <td>Главный танцор, ведущий рэпер, вокалистка</td>
+            <td>Обездвиживание</td>
+          </tr>
+          <tr>
+            <td>Siyeon</td>
+            <td>Главная вокалистка, центр, лицо группы</td>
+            <td>Быть запертым в тесном месте</td>
+          </tr>
+          <tr>
+            <td>Handong</td>
+            <td>Вокалистка</td>
+            <td>Быть наблюдаемым</td>
+          </tr>
+          <tr>
+            <td>Yoohyeon</td>
+            <td>Ведущая вокалистка</td>
+            <td>Быть потерянным в неизвестном месте</td>
+          </tr>
+          <tr>
+            <td>Dami</td>
+            <td>Главный рэпер, ведущий танцор, вокалистка</td>
+            <td>Быть раненым</td>
+          </tr>
+          <tr>
+            <td>Gahyeon</td>
+            <td>Вокалистка, рэпер, макнэ</td>
+            <td>Падение с высоты</td>
+          </tr>
+        </table>
+      </div>
+  </body>
+  <footer>
+    <p>
+      Kpop Fandom link:
+      <a href="https://kpop.fandom.com/ru/wiki/Dreamcatcher" target="_blank"
+        >Click me</a
+      >
+    </p>
+    <p>
+      Wikipedia link:
+      <a href="https://ru.wikipedia.org/wiki/Dreamcatcher" target="_blank"
+        >Click me</a
+      >
+    </p>
+    <p style="background-color: black; margin-bottom: 0px;">
+      <b>Информация: </b> Швец Иван КИТ 218Б <b>Дата:</b>  20.10.2020
+    </p>
+  </footer>
+</html>
