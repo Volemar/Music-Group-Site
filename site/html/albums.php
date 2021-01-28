@@ -39,12 +39,6 @@
                   ><img src="../img/interact/menuBtns/DCCompanyBtn.png" alt="DC Company" class="menuPic"
                 /></a>
               </li>
-              <li>
-                  
-                <a href="./admin.php"
-                  ><img src="../img/interact/menuBtns/DCCompanyBtn.png" alt="DC Company" class="menuPic"
-                /></a>
-              </li>
       </ul>
   </header>
   <body>
@@ -54,21 +48,21 @@
         $conn = $db->connect();
         $stmt = $conn->prepare("SELECT * FROM docker_database.albums");
         $stmt->execute();
-        $albums = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <div id="topNubex"><img src="../img/interact/pointerUpclean.png"
       style="width: 20%;"/></div>
       <div id="middle">
-        <h1>DREAMCATCHER</h1>
+        <h1>Albums</h1>
         <p>
-          Dreamcatcher (드림캐쳐) - женская группа компании Dreamcatcher
-          Company. Они дебютировали 13 января 2017 года с синглом "Nightmare".
+          Здесь вы можете посмотреть на все вышедшие альбомы группы, на их название и описание.
         </p>
         <p>
           <?php
-          echo "<pre>";
-          print_r($albums);
-          echo "</pre>";
+          while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ 
+          $name=$row['name'];
+          $description=$row['description'];
+          echo "<div>" . '<h1>' . $name . '<h1>' . '<p>' .$description .'</p>'. "</div>";
+        }
           ?>
         </p>
       </div>
@@ -83,6 +77,12 @@
     <p>
       Wikipedia link:
       <a href="https://ru.wikipedia.org/wiki/Dreamcatcher" target="_blank"
+        >Click me</a
+      >
+    </p>
+    <p>
+      Admin page:
+      <a href="./pass.html"
         >Click me</a
       >
     </p>

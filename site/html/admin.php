@@ -4,47 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../css/styles.css" />
-        <link rel="stylesheet" href="../css/group.css" />
         <title>Albums</title>
     </head>
-  <header>
-      <ul id="menuList">
-              <li>
-                <a href="../index.html"
-                  ><img src="../img/interact/menuBtns/HomeBtn.png" alt="Home" class="menuPic"
-                /></a>
-              </li>
-              <li>
-                <a href="./group.html"
-                  ><img src="../img/interact/menuBtns/GroupBtn.png" alt="Group" class="menuPic"
-                /></a>
-              </li>
-              <li>
-                <a href="./members.html"
-                  ><img src="../img/interact/menuBtns/MembersBtn.png" alt="Members" class="menuPic"
-                /></a>
-              </li>
-              <li>
-                <a href="./albums.php"
-                  ><img src="../img/interact/menuBtns/AlbumsBtn.png" alt="Albums" class="menuPic"
-                /></a>
-              </li>
-              <li>
-                <a href="./mv.html"
-                  ><img src="../img/interact/menuBtns/MVBtn.png" alt="Music Videos" class="menuPic"
-                /></a>
-              </li>
-              <li>
-                <a href="./labelCompany.html"
-                  ><img src="../img/interact/menuBtns/DCCompanyBtn.png" alt="DC Company" class="menuPic"
-                /></a>
-              </li>
-              <li>
-                <a href="./admin.php"
-                  ><img src="../img/interact/menuBtns/DCCompanyBtn.png" alt="DC Company" class="menuPic"
-                /></a>
-              </li>
-      </ul>
+  <header style="float: left; padding-left: 29%">
+          <a href="./albums.php"><img src="../img/interact/menuBtns/AlbumsBtn.png" alt="Albums" width = "30%"/></a>
   </header>
   <body>
     <?php
@@ -53,36 +16,32 @@
         $conn = $db->connect();
         $stmt = $conn->prepare("SELECT * FROM docker_database.albums");
         $stmt->execute();
-        $albums = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <div id="topNubex"><img src="../img/interact/pointerUpclean.png"
       style="width: 20%;"/></div>
       <div id="middle">
-        <h1>DREAMCATCHER</h1>
+        <h1>Admin page</h1>
         <p>
-          Dreamcatcher (드림캐쳐) - женская группа компании Dreamcatcher
-          Company. Они дебютировали 13 января 2017 года с синглом "Nightmare".
+          Здесь вы можете добавить новые альбомы или удалить старые по согласованию с заказчиком, тщательно следите за обновлениями группы, мы хотим поставлять только качественный и своевременный контент.
         </p>
         <form action="process.php" method="post">
         <label>Id :</label>
-        <input type="text" name="alb_id" required="required" placeholder="Please Enter Id"/><br /><br />
+        <input type="text" name="alb_id" placeholder="Please Enter Id"/>
+        <input type="submit" value="Delete" name="delete"/><br /><br />
         <label>Name :</label>
-        <input type="text" name="alb_name" required="required" placeholder="Please Enter Name"/><br/><br />
-        <label>Photo :</label>
-        <input type="text" name="alb_photo" required="required" placeholder="Please Enter Photo"/><br/><br />
+        <input type="text" name="alb_name" placeholder="Please Enter Name"/><br/><br />
         <label>Description :</label>
-        <input type="text" name="alb_description" required="required" placeholder="Please Enter Desciption"/><br/><br/>
+        <input type="text" name="alb_description" placeholder="Please Enter Desciption"/><br/><br/>
         <input type="submit" value="Submit" name="submit"/><br />
         </form>
-        <p>
-          <?php
-          echo "<pre>";
-          print_r($albums);
-          echo "</pre>";
-          ?>
-        </p>
+        <?php 
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ 
+          $name=$row['name'];
+          $description=$row['description'];
+          echo "<div>" . '<h1>' . $name . '<h1>' . '<p>' .$description .'<p>'. "</div>";
+        }
+        ?>
       </div>
-  </body>
   <footer>
     <p>
       Kpop Fandom link:
@@ -100,4 +59,5 @@
       <b>Информация: </b> Швец Иван КИТ 218Б <b>Дата:</b>  20.10.2020
     </p>
   </footer>
+  </body>
 </html>
